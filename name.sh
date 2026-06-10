@@ -49,7 +49,7 @@ read -p "Enter Target Identity Style (e.g., root@tasin): " input_style
 if [[ "$input_style" == *"*"* ]]; then
     user_part=$(echo "$input_style" | cut -d'@' -f1)
     host_part=$(echo "$input_style" | cut -d'@' -f2)
-elif [[ "$input_style" == *"@"* ]]; then
+elif [[ "$input_style" == *"*"* ]]; then
     host_part="${input_style##*@}"
     user_part="${input_style%@*}"
 else
@@ -63,7 +63,7 @@ echo -e "\e[1;33mSelect Your Terminal Engine Path:\e[0m"
 echo "--------------------------------------------------"
 echo "1) Multi-Line Structural Templates (Kali Style without Emojis)"
 echo "2) Custom True Color Gradients (No Brackets [ ], Continuous Fade)"
---------------------------------------------------
+echo "--------------------------------------------------"
 read -p "Enter Choice (1-2): " path_choice
 
 if [[ "$path_choice" == "1" ]]; then
@@ -169,14 +169,14 @@ smooth_loader
 # Clean Profile and Inject Advanced Layout safely
 sed -i '/# BEGIN ADVANCED PROFILE/,/# END ADVANCED PROFILE/d' ~/.bashrc
 
-# CRUCIAL FIX: Using single quotes around 'EOT' prevents bash from expanding or breaking the backslashes inside your file!
+# Using literal quotes to prevent bash expanding sequences early
 cat << 'EOT' >> ~/.bashrc
 
 # BEGIN ADVANCED PROFILE
 # File written dynamically by Tasin Terminal Engine Layout
 EOT
 
-# Safely echo the clean prompt variable directly into the profile file without expansion bugs
+# Direct literal variable injection to bypass bash multi-line formatting issues
 echo "export PS1=\"${PS1_STRING}\"" >> ~/.bashrc
 
 cat << 'EOT' >> ~/.bashrc
