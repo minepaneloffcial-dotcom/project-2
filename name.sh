@@ -46,10 +46,13 @@ echo ""
 # Strict string parsing engine
 read -p "Enter Target Identity Style (e.g., root@tasin): " input_style
 
-if [[ "$input_style" == *"*"* ]]; then
-    user_part=$(echo "$input_style" | cut -d'@' -f1)
-    host_part=$(echo "$input_style" | cut -d'@' -f2)
+if [[ "$input_style" == *"#"* ]]; then
+    user_part=$(echo "$input_style" | cut -d'#' -f1)
+    host_part=$(echo "$input_style" | cut -d'#' -f2)
 elif [[ "$input_style" == *"*"* ]]; then
+    user_part=$(echo "$input_style" | cut -d'*' -f1)
+    host_part=$(echo "$input_style" | cut -d'*' -f2)
+elif [[ "$input_style" == *"@"* ]]; then
     host_part="${input_style##*@}"
     user_part="${input_style%@*}"
 else
