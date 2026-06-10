@@ -1,3 +1,4 @@
+cat << 'EOF' > ultimate_gradient.sh
 #!/bin/bash
 
 # Clear screen instantly to start animation frames
@@ -31,8 +32,7 @@ EOT
 
 # --- Outro Animation Sequencer ---
 echo -e "\e[1;32m"
-for i in {1..3}
-.. do
+for i in {1..3}; do
     echo -ne "💥 BOOM! "
     sleep 0.15
 done
@@ -45,3 +45,5 @@ echo ""
 echo -e "      \e[1;42;30m source ~/.bashrc \e[0m"
 echo ""
 echo -e "\e[1;35m==================================================\e[0m"
+EOF
+chmod +x ultimate_gradient.sh
