@@ -1,8 +1,19 @@
 #!/bin/bash
 
 # ==========================================
-# ULTIMATE VPS CUSTOMIZER V3 BY TASIN
+# ULTIMATE VPS HOSTNAME CUSTOMIZER BY iTzTasin69
 # ==========================================
+
+# Animation Function
+type_text() {
+    local text="$1"
+    local color="$2"
+    for (( i=0; i<${#text}; i++ )); do
+        echo -ne "${color}${text:$i:1}\e[0m"
+        sleep 0.04
+    done
+    echo ""
+}
 
 # Helper function to build gradient strings dynamically for PS1
 build_gradient_ps1() {
@@ -21,17 +32,22 @@ build_gradient_ps1() {
     echo "$result"
 }
 
-# 1. Ask for Custom User and Hostname FIRST
+# 1. Show Animated Intro and Ask for Custom Names
 clear
-echo -e "\e[1;35m╔══════════════════════════════════════╗"
-echo -e "║     🚀 VPS CUSTOMIZER BY TASIN 🚀    ║"
-echo -e "╚══════════════════════════════════════╝\e[0m"
+
+# Smooth typing animation in Cyan
+type_text "Welcome to Premium Vps Name Editor Made By iTzTasin69" "\e[1;36m"
 echo ""
 
-read -p "Enter your custom Username (e.g., admin, hacker, tasin): " CUSTOM_USER
-CUSTOM_USER=${CUSTOM_USER:-admin}
+# Line 2
 
-read -p "Enter your custom Hostname (e.g., vps, server, ghost): " CUSTOM_HOST
+type_text "||||||||||||||||||||||||" "\e[1;36m"
+echo ""
+
+read -p "Enter your custom Username: " CUSTOM_USER
+CUSTOM_USER=${CUSTOM_USER:-tasin}
+
+read -p "Enter your custom Hostname: " CUSTOM_HOST
 CUSTOM_HOST=${CUSTOM_HOST:-vps}
 
 # Apply system hostname
@@ -61,7 +77,6 @@ print_gradient() {
 # 4. Show the Intro Banner (HARDCODED TO TASIN)
 clear
 if command -v figlet &> /dev/null; then
-    # Removed '-c' to prevent the --help error, redirected stderr to prevent text dumps
     FIGLET_OUTPUT=$(figlet "TASIN" 2>/dev/null || echo "TASIN")
     while IFS= read -r line; do
         print_gradient "$line" 0 255 255 255 0 255
@@ -72,7 +87,7 @@ else
     echo ""
 fi
 
-echo -e "\e[1;33m⚡ Made By Tasin & Make Your VPS 100x Cool ⚡\e[0m"
+echo -e "\e[1;33m⚡ Made By Tasin & Premium Name Editor Shell ⚡\e[0m"
 echo ""
 
 # 5. The Menu
