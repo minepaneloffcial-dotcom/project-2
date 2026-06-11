@@ -39,9 +39,13 @@ clear
 type_text "Welcome to Premium Vps Name Editor Made By iTzTasin69" "\e[1;36m"
 echo ""
 
-# Line 2
+type_text "analysing data...." "\e[1;36m"
+echo ""
 
-type_text "||||||||||||||||||||||||" "\e[1;36m"
+type_text "&#*(!)#*$&$&@(Protected By iTzTasin69)" "\e[1;36m"
+echo ""
+
+type_text "Done!" "\e[1;36m"
 echo ""
 
 read -p "Enter your custom Username: " CUSTOM_USER
@@ -87,7 +91,10 @@ else
     echo ""
 fi
 
-echo -e "\e[1;33m⚡ Made By Tasin & Premium Name Editor Shell ⚡\e[0m"
+echo -e "\e[1;33m⚡ Powered By iTzTasin69 & Premium Name Editor Shell ⚡\e[0m"
+echo ""
+
+echo -e "\e[1;33m💻 Welcome to Your Vps Terminal 💻\e[0m"
 echo ""
 
 # 5. The Menu
