@@ -91,10 +91,7 @@ else
     echo ""
 fi
 
-echo -e "\e[1;33m⚡ Powered By iTzTasin69 & Premium Name Editor Shell ⚡\e[0m"
-echo ""
-
-echo -e "\e[1;33m💻 Welcome to Your Vps Terminal 💻\e[0m"
+echo -e "\e[1;33m ⚡ Made By iTzTasin69 & Premium Name Editor Shell ⚡\e[0m"
 echo ""
 
 # 5. The Menu
@@ -216,7 +213,8 @@ BANNER_EOF
 
 # Hardcode "TASIN" as the banner text, regardless of what they chose for the hostname
 echo "print_banner_gradient 'TASIN' 0 255 255 255 0 255" >> ~/.bashrc
-echo "echo -e '\e[1;33m⚡ Made By Tasin & Make Your VPS 100x Cool ⚡\e[0m'" >> ~/.bashrc
+echo "echo -e '\e[1;33m⚡ Powered By Tasin & Premium Name Editor Shell ⚡\e[0m'"
+echo "echo -e '\e[1;33m 💻 Welcome to Your Vps Terminal 💻\e[0m'" >> ~/.bashrc
 echo "PS1='$NEW_PS1'" >> ~/.bashrc
 echo "# END TASIN CONFIG" >> ~/.bashrc
 
